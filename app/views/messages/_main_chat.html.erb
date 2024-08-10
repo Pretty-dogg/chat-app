@@ -12,101 +12,10 @@
       <div class="message-date">2024/08/04(Sun) 16:33:00</div>
   </div>
     <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
-  <div class="messeges">
-    <div class="message-header">
-      <div class="message-user">Haruki</div>
-      <div class="message-date">2024/08/04(Sun) 16:33:00</div>
-  </div>
-    <div class="message-content">やっほー</div>
-  </div>
 </div>
 
-<div class="chat-column">
+
+<%# <div class="chat-column">
   <div class="form-input">
     <input type="text" placeholder="type a message" class="message-form">
       <label class="form-image">
@@ -115,4 +24,15 @@
       </label>
   </div>
   <input type="submit" value="送信" class="sendbtn">
-</div>
+</div> %>
+<%# <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
+<%= form_with model: [@room, @message], html: {class: "chat-column"}, local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'message-form', placeholder: 'type a message' %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'sendbtn' %>
+<% end %>
