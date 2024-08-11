@@ -6,12 +6,13 @@
 </div>
 
 <div class="main-chat">
-  <div class="messeges">
+  <%# <div class="messeges">
     <div class="message-header">
       <div class="message-user">Haruki</div>
       <div class="message-date">2024/08/04(Sun) 16:33:00</div>
   </div>
-    <div class="message-content">やっほー</div>
+    <div class="message-content">やっほー</div> %>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
 
